@@ -5,13 +5,12 @@
         <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
+    </head>
 
 <link rel="stylesheet" href="style2.css">
-
 <link rel="stylesheet" href="style3.css">
 
 
-    </head>
 
     <body style="margin: 0; overflow: hidden;">
         <a-scene
@@ -78,13 +77,17 @@ if (navigator.mediaDevices.getUserMedia) {
                 cursor="fuse: false; rayOrigin: mouse;"
                 id="markerA"
             >
-                <a>
+                <a-image
+                    src="assets/asset.jpeg"
+                    scale="1 1 1"
+                    class="clickable"
+                    rotation="-90 0 0"
+                    gesture-handler
+                >
 
 
 
-
-
-     <div class="demo-presentation" data-attr-spliced-ignore>
+<div class="demo-presentation" data-attr-spliced-ignore>
     
 
       <div class="bg-controls-container">
@@ -126,10 +129,16 @@ if (navigator.mediaDevices.getUserMedia) {
 </script>
 
 
-</a>
+
+</a-image>
             </a-marker>
 
             <a-entity camera></a-entity>
         </a-scene>
+
+
+<script  src="script2.js"></script>
+
     </body>
 </html>
+
