@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
+
+<link rel="stylesheet" href="style2.css">
+
+<link rel="stylesheet" href="style3.css">
+
+
+    </head>
+
+    <body style="margin: 0; overflow: hidden;">
+        <a-scene
+            vr-mode-ui="enabled: false;"
+            loading-screen="enabled: false;"
+            arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+            id="scene"
+            embedded
+            gesture-detector
+        >
+
+
+
+
+
+<style>
+
+#videoElement {
+   object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+</style>
+
+
+  <video autoplay="true" id="videoElement">
+  
+  </video>
+
+
+
+
+<script>
+
+  var video = document.querySelector("#videoElement");
+
+if (navigator.mediaDevices.getUserMedia) {
+  navigator.mediaDevices.getUserMedia({ video: true })
+    .then(function (stream) {
+      video.srcObject = stream;
+    })
+    .catch(function (err0r) {
+      console.log("Something went wrong!");
+    });
+}
+
+
+
+
+</script>
+
+
+
+            <a-marker
+                id="animated-marker"
+                type="pattern"
+                preset="custom"
+                url="assets/marker.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerA"
+            >
+                <a>
+
+
+
+
+
+     <div class="demo-presentation" data-attr-spliced-ignore>
+    
+
+      <div class="bg-controls-container">
+        <div class="bg-controls" augmented-ui="tl-round tr-clip br-round bl-clip exe">
+          <div class="diagnostics-info">
+            ANIMATION DIAGNOSTICS<br>
+            <span class="performance-detail">PERFORMANCE: </span>
+          </div>
+        </div>
+        <span id="bgFPS" augmented-ui="tl-round tr-clip br-round bl-clip exe"></span>
+        <span class="fps-label" augmented-ui="tr-clip bl-clip exe">FPS</span>
+      </div>
+      <div class="definitions-container">
+        <div class="def" augmented-ui="tr-round tl-clip bl-round br-clip exe">
+          <b>augs</b> <em>plural noun, abr.</em><br>
+          1. Pieces of technology, often large, integrated into the squishy human body. <span title="and in our not too distant future">Common in the cyberpunk genera.</span><br>
+          <br>
+          2. clip-path partials integrated into an app's flexible ui elements with augmented-ui.
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+<input class="checkbox" type="checkbox" checked="checked" aria-label="Tick the checkbox to open/close the prompt"/>
+
+ <div class="message_container">
+  <div class="message" augmented-ui="exe tl-clip br-clip">
+    <div class="title" augmented-ui="exe tl-clip br-clip">Attention</div>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo, corporis eum, dolorum sed voluptate tempora unde placeat quas ut adipisci illum ab ea commodi sunt. Dolor dolorum neque facere tempora.</p>
+  </div>
+</div>
+
+<script>
+  var rsw_powered = {};
+  rsw_powered["augmented-ui"] = true;
+</script>
+
+
+</a>
+            </a-marker>
+
+            <a-entity camera></a-entity>
+        </a-scene>
+    </body>
+</html>
